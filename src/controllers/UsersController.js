@@ -14,15 +14,15 @@ class UsersController{
     async index(req, res){
         const allUsers = await knex('users').select('*');
 
-        return res.status(201).json(allUsers);
+        return res.status(200).json(allUsers);
     }
 
     async show(req, res){
-        const { id } = req.body;
+        const { id } = req.params;
 
         const user = await knex('users').select('*').where('id', id).first();
 
-        return res.status(201).json(user);
+        return res.status(200).json(user);
     }
 
     async create(req, res){
