@@ -22,6 +22,10 @@ class UsersController{
 
         const user = await knex('users').select('*').where('id', id).first();
 
+        if(user === undefined){
+            throw new AppError("Usuário não encontrado");
+        }
+
         return res.status(200).json(user);
     }
 
@@ -87,6 +91,15 @@ class UsersController{
     }
 
     async delete(req, res){
+        const { id } = req.params;
+
+        const deletedUser = await knex('users').where('id', id).del().returning('*');
+
+        if(!deletedUser){
+            throw new AppError("Usuário não encontrado");
+        }
+
+        return res.status(204).json();
     }
 }
 
