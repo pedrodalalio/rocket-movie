@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import backgroundImage from "../../assets/image.png"
+import { Link } from "react-router-dom"
 
 export const Container = styled.div`
     height: 100vh;
@@ -12,7 +14,6 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     text-transform: center;
 
@@ -28,7 +29,7 @@ export const Form = styled.form`
 
     > p{
         font-size: 14px;
-        color: ${({ theme }) => theme.COLORS.GRAY_100}
+        color: ${({ theme }) => theme.COLORS.GRAY_400}
     }
 
     > a{
@@ -37,8 +38,13 @@ export const Form = styled.form`
     }
 `
 
-//export const background = styled.div`
-//    flex: 1;
-//    background: url(${backgroundImg}) no-repeat center center;
-//    background-size: cover;
-//`
+export const Background = styled.div`
+    flex: 1;
+    background: url(${backgroundImage}) no-repeat center center;
+    background-size: cover;
+`
+
+export const CreateAccount = styled(Link)`
+    margin-top: 52px !important;
+    align-self: center;
+`
