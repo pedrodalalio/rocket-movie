@@ -40,4 +40,5 @@ export const Content = styled.div`
 
     grid-area: content;
     overflow-y: auto;
+    scrollbar-color: ${({ theme }) => theme.COLORS.PINK} transparent;
 `
