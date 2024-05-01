@@ -1,7 +1,6 @@
 import { Container, Form, Background, GoToLogin } from "./style";
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
-
 import { FiLock, FiMail, FiUser, FiArrowLeft } from "react-icons/fi"
 
 export function SignUp(){
